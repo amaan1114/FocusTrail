@@ -21,6 +21,7 @@ function FocusTrail(){
   const signIn = sessionStorage.getItem('IsLoggedIn')
   const hasFetchedSessions = useRef(false);
   const NameRef = useRef(null);
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 
 
@@ -30,7 +31,7 @@ function FocusTrail(){
     
         const fetchdata= async()=>{
         try{
-          const res = await axios.post('http://localhost:3000/GetSessions',{emailG:email})
+          const res = await axios.post(`${backendUrl}/GetSessions`,{emailG:email})
           Addsessions(res.data.Sessions)
          
           hasFetchedSessions.current = true
@@ -52,7 +53,7 @@ function FocusTrail(){
     const update= async()=>{
     try{
 
-      const res = await axios.post('http://localhost:3000/SessionUpdate',{emailSe:email,Sessions:Session})
+      const res = await axios.post(`${backendUrl}/SessionUpdate`,{emailSe:email,Sessions:Session})
 
     }catch(error){
       console.log(error)

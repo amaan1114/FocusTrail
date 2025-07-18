@@ -24,7 +24,7 @@ function SignUp(){
     const[passwordtype,setpasstype] = useState('password')
     const[showcomfirmpass,showcomfirmpassfunc] = useState(true)
     const[passwordcomfirmtype,setcomfirmpasstype] = useState('password')
-
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
 //show password
 function showpassword() {
 
@@ -105,7 +105,7 @@ function validatePassword(password) {
                 if(validatePassword(password)==='Valid'){
                         if(password==confirmPass){
                             try{
-                                const res=await axios.post('http://localhost:3000/SignUp',{name1:name,
+                                const res=await axios.post(`${backendUrl}/SignUp`,{name1:name,
                                     Password1:password,
                                     email1:SetMail
                                 })

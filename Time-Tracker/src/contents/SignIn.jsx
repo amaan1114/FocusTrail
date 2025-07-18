@@ -14,7 +14,7 @@ function SignIn(){
     const [target, setTarget] = useState(null);
     const BoxRef = useRef(null);
     const navigate = useNavigate()
-    
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
     
 //showing password    
 function showpassword() {
@@ -35,7 +35,7 @@ function showpassword() {
 //posting signin request
     async function postSignIn(){
         try{
-            const res = await axios.post('http://localhost:3000/SignIn',{
+            const res = await axios.post(`${backendUrl}/SignIn`,{
                 emailS:email,
                 passwordS:pass
             })
