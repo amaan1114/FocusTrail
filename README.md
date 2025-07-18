@@ -4,9 +4,8 @@ FocusTrail is a simple and intuitive productivity and focus-tracking web app tha
 
 ---
 
-## 📸 Preview
-
-![FocusTrail Preview](https://yourdomain.com/path-to-social-preview-image.jpg)
+## Site
+focus-trail.netlify.app
 
 ---
 
